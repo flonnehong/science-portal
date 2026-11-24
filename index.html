@@ -108,6 +108,13 @@ section{padding:56px 0 8px}
 .faq summary{font-weight:700;cursor:pointer}
 .faq p{margin-top:8px;color:var(--ink2)}
 footer{padding:48px 0 56px;color:var(--ink2);font-size:15px}
+button.btn{font-family:inherit;cursor:pointer}
+.qrcard{background:#ffe1ec;border-radius:36px;padding:26px 30px;display:flex;flex-wrap:wrap;gap:20px 30px;align-items:center}
+.qrimg{padding:0;border:0;border-radius:22px;overflow:hidden;background:#fff;line-height:0;cursor:pointer}
+.qrt{margin:8px 0 2px}.qru{font-weight:900;overflow-wrap:anywhere;margin-bottom:14px}
+dialog{border:0;border-radius:32px;padding:20px 28px 24px;text-align:center;background:#fff;color:var(--ink);max-width:96vw;max-height:96vh}
+dialog::backdrop{background:rgba(35,32,70,.75)}
+dialog h2{font-size:clamp(24px,4.4vh,44px)}dialog img{display:block;width:min(64vh,82vw);height:auto;margin:0 auto}dialog .qru{font-size:clamp(15px,2.6vh,26px)}
 [hidden]{display:none!important}
 @media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-top:30px;padding-bottom:36px}.hero svg.art{max-width:430px;margin:0 auto}.units{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(2,1fr)}.feat{grid-template-columns:1fr}}
 @media (max-width:480px){.top nav a{padding:7px 9px;font-size:14px}.logo{font-size:18px}.logo svg{width:26px;height:26px}.cards{grid-template-columns:1fr}.unit{min-height:132px;padding:15px}.flow{grid-template-columns:1fr}.about{border-radius:32px}}
@@ -125,7 +132,7 @@ footer{padding:48px 0 56px;color:var(--ink2);font-size:15px}
   <div>
     <h1>두근두근<br>중2 과학</h1>
     <p class="lead">눌러 보고, 옮겨 보고, 직접 알아내는 과학 수업! 식물부터 별까지 5~8단원의 수업 앱을 한곳에 모았어요.</p>
-    <div class="cta"><a class="btn" href="#apps">수업 들어가기</a><a class="btn w" href="#about">수업 소개 보기</a></div>
+    <div class="cta"><a class="btn" href="#apps">수업 들어가기</a><a class="btn w" href="#about">수업 소개 보기</a><button class="btn w qropen" type="button">QR코드</button></div>
   </div>
   <svg class="art" viewBox="0 0 520 420" role="img" aria-label="잎, 위, 번개, 별과 지구가 비커 둘레에 떠 있는 그림">
     <circle cx="260" cy="220" r="150" fill="#fff" opacity=".55"/>
@@ -172,7 +179,13 @@ footer{padding:48px 0 56px;color:var(--ink2);font-size:15px}
   <details><summary>내가 쓴 답은 어디에 저장되나요?</summary><p>‘접속 필요’ 앱의 답은 선생님의 기록 시트로 보내져요. 나머지 앱은 지금 쓰는 기기의 브라우저에만 저장돼요. 함께 쓰는 기기라면 다른 사람이 볼 수 있으니 개인 정보를 적지 마세요.</p></details>
   <details><summary>화면이 예전 모습으로 나와요.</summary><p>컴퓨터는 Ctrl과 F5를 함께 누르고, 휴대폰이나 태블릿은 창을 닫았다가 다시 열어 보세요.</p></details>
 </div></section>
+
+<section id="qr"><div class="wrap"><div class="qrcard">
+  <button class="qrimg qropen" type="button" aria-label="QR코드 크게 보기"><img src="qr.svg" alt="대표 앱 QR코드" width="190" height="190"></button>
+  <div><h2 class="sec">QR코드로 들어오기</h2><p class="qrt">카메라로 찍으면 이 페이지가 열려요.</p><p class="qru">flonnehong.github.io/science-portal</p><button class="btn qropen" type="button">크게 보기</button></div>
+</div></div></section>
 </main>
+<dialog id="qrDlg" aria-labelledby="qrTitle"><h2 id="qrTitle">두근두근 중2 과학</h2><img src="qr.svg" alt="대표 앱 QR코드"><p class="qru">flonnehong.github.io/science-portal</p><button class="btn" id="qrClose" type="button">닫기</button></dialog>
 <footer><div class="wrap">중학교 2학년 과학 · 5~8단원 수업 앱 모음</div></footer>
 
 <script>
@@ -236,6 +249,10 @@ $("all").onclick = () => { history.replaceState(null, "", "#apps"); show(0); };
 function route(){ const m = /^#unit([5-8])$/.exec(location.hash); show(m ? +m[1] : 0, !!m); }
 addEventListener("hashchange", () => { if (/^#unit[5-8]$/.test(location.hash)) route(); });
 route();
+const dlg = $("qrDlg");
+document.querySelectorAll(".qropen").forEach(b => b.onclick = () => dlg.showModal());
+$("qrClose").onclick = () => dlg.close();
+dlg.onclick = e => { if (e.target === dlg) dlg.close(); };
 })();
 </script>
 </body>
