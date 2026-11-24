@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffd23f">
+<title>두근두근 중2 과학</title>
+<meta name="description" content="중학교 2학년 과학 5~8단원 수업 앱을 한곳에 모았어요. 눌러 보고, 옮겨 보고, 직접 알아내는 과학 수업">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23ffd23f'/%3E%3Cpath d='M13 6h6v7l6 10a3 3 0 0 1-3 4H10a3 3 0 0 1-3-4l6-10z' fill='%23ff5a5f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--ink:#232046;--ink2:#58547a;--paper:#fffdf5;--white:#fff;--sun:#ffd23f;--coral:#ff5a5f;--sky:#22b8e8;
+  --c:#ff5a5f;--cd:#c22f3a;--cs:#ffeceb;--title:"Jua","Noto Sans KR",system-ui,sans-serif}
+.u5{--c:#3ddc7a;--cd:#0b7a36;--cs:#e2f8e6}
+.u6{--c:#ff8f45;--cd:#b8450a;--cs:#fff0e2}
+.u7{--c:#ffc400;--cd:#7d5b00;--cs:#fff6cf}
+.u8{--c:#a48dff;--cd:#4a2fd0;--cs:#eeeaff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans KR",system-ui,"Malgun Gothic",sans-serif;font-size:17px;line-height:1.65;word-break:keep-all;overflow-wrap:anywhere}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:var(--title);font-weight:400;line-height:1.2;margin:0}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:4px solid var(--ink);outline-offset:3px;border-radius:10px}
+
+header.top{position:sticky;top:0;z-index:10;background:rgba(255,253,245,.94);backdrop-filter:blur(8px)}
+.top .wrap{display:flex;align-items:center;gap:8px 18px;min-height:60px}
+.logo{font-family:var(--title);font-size:22px;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:8px}
+.logo svg{width:32px;height:32px}
+.top nav{display:flex;gap:4px}
+.top nav a{text-decoration:none;font-weight:700;font-size:15px;padding:7px 12px;border-radius:999px}
+.top nav a:hover{background:#fff0b3}
+
+.hero{background:var(--sun);position:relative;overflow:hidden;border-radius:0 0 44px 44px}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%}
+.hero::before{width:420px;height:420px;right:-110px;top:-150px;background:#ffe47f}
+.hero::after{width:260px;height:260px;left:-90px;bottom:-120px;background:#ffb938}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center;padding-top:44px;padding-bottom:52px}
+.hero h1{font-size:clamp(42px,7.4vw,78px);letter-spacing:-.01em}
+.hero .lead{font-size:clamp(18px,2.2vw,22px);font-weight:500;margin:14px 0 24px;max-width:26em}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:17px;padding:13px 24px;border-radius:999px;background:var(--ink);color:#fff;border:0;transition:transform .15s}
+.btn.w{background:#fff;color:var(--ink)}
+.btn:hover{transform:translateY(-3px)}
+.hero svg.art{width:100%;height:auto;display:block}
+.float{animation:fl 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.float.b{animation-delay:-1.4s}.float.c{animation-delay:-2.6s}.float.d{animation-delay:-3.8s}
+@keyframes fl{50%{transform:translateY(-12px) rotate(3deg)}}
+
+section{padding:56px 0 8px}
+.sec{font-size:clamp(30px,4.6vw,44px)}
+.sub{color:var(--ink2);margin-top:8px}
+
+.units{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0 10px}
+.unit{font:inherit;text-align:left;cursor:pointer;border:4px solid transparent;border-radius:26px;background:var(--c);color:var(--ink);padding:18px 18px 16px;min-height:150px;display:flex;flex-direction:column;transition:transform .15s}
+.unit:hover{transform:translateY(-5px)}
+.unit .n{font-family:var(--title);font-size:19px}
+.unit .t{font-family:var(--title);font-size:clamp(22px,2.6vw,27px);line-height:1.2;margin:2px 0 auto}
+.unit .k{font-size:14px;font-weight:700;margin-top:14px}
+.unit[aria-pressed=true]{border-color:var(--ink);transform:translateY(-5px)}
+.all{font:inherit;font-weight:700;cursor:pointer;border:3px solid var(--ink);background:#fff;color:var(--ink);border-radius:999px;padding:8px 18px;margin-top:8px}
+.all[aria-pressed=true]{background:var(--ink);color:#fff}
+
+.group{margin-top:34px}
+.group>.head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.group>.head h3{font-size:clamp(24px,3.2vw,32px);color:var(--cd)}
+.group>.head p{color:var(--ink2)}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:14px}
+.cards.one{grid-template-columns:1fr}
+@media (min-width:761px){.cards.one .card{flex-direction:row}.cards.one .pic{flex:0 0 46%;display:flex;align-items:center}.cards.one .body{justify-content:center}.cards.one .tags{margin-top:0}}
+@media (max-width:760px){.cards{grid-template-columns:1fr}}
+.card{background:#fff;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 0 var(--c);border:3px solid var(--c);transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-5px);box-shadow:0 11px 0 var(--c)}
+.pic{background:var(--cs);display:block}
+.pic svg{display:block;width:100%;height:auto}
+.body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.body h4{font-family:var(--title);font-weight:400;font-size:25px;line-height:1.25;margin:0}
+.q{font-weight:700;color:var(--cd);margin-top:6px}
+.d{color:var(--ink2);margin:8px 0 12px;font-size:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:auto 0 14px}
+.tags span{font-size:14px;font-weight:700;background:var(--cs);color:var(--cd);padding:3px 11px;border-radius:999px}
+.tags span.in{background:var(--ink);color:#fff}
+.go{display:flex;justify-content:center;gap:8px;text-decoration:none;font-weight:900;font-size:18px;border-radius:16px;padding:12px;background:var(--c);color:var(--ink)}
+.go:hover{filter:brightness(1.06)}
+
+.about{background:#dff6ff;border-radius:44px;margin:64px 0 0;padding:52px 0 56px}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px;list-style:none;padding:0}
+.flow li{background:#fff;border-radius:24px;padding:20px}
+.flow .no{display:inline-flex;width:44px;height:44px;border-radius:50%;align-items:center;justify-content:center;font-family:var(--title);font-size:23px;background:var(--c);color:#fff;margin-bottom:10px}
+.flow .no{color:var(--ink)}.flow li:nth-child(1) .no{background:#ff8b8f}.flow li:nth-child(2) .no{background:#ffa463}.flow li:nth-child(3) .no{background:#4fe08a}.flow li:nth-child(4) .no{background:#b09cff}
+.flow b,.feat b{font-family:var(--title);font-weight:400;font-size:22px;display:block;line-height:1.3}
+.flow p,.feat p{color:var(--ink2);font-size:16px;margin-top:4px}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.feat div{border-radius:24px;padding:22px}
+.feat div p{color:var(--ink)}
+.feat div:nth-child(1){background:#ffd9d6}.feat div:nth-child(2){background:#fff0a8}.feat div:nth-child(3){background:#d3f5d5}
+.h3{font-size:clamp(24px,3.2vw,30px);margin-top:40px}
+.plan{margin-top:14px;background:#fff;border-radius:24px;padding:6px 20px;overflow-x:auto}
+.plan table{width:100%;border-collapse:collapse;min-width:520px}
+.plan th,.plan td{text-align:left;padding:13px 10px;border-bottom:2px solid #e7f3f8;vertical-align:top}
+.plan tr:last-child td{border-bottom:0}
+.plan td:first-child{font-family:var(--title);font-size:19px;color:var(--cd);white-space:nowrap}
+.faq details{background:#fff;border-radius:20px;border:3px solid #ffe48a;padding:14px 20px;margin-top:12px}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin-top:8px;color:var(--ink2)}
+footer{padding:48px 0 56px;color:var(--ink2);font-size:15px}
+[hidden]{display:none!important}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-top:30px;padding-bottom:36px}.hero svg.art{max-width:430px;margin:0 auto}.units{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(2,1fr)}.feat{grid-template-columns:1fr}}
+@media (max-width:480px){.top nav a{padding:7px 9px;font-size:14px}.logo{font-size:18px}.logo svg{width:26px;height:26px}.cards{grid-template-columns:1fr}.unit{min-height:132px;padding:15px}.flow{grid-template-columns:1fr}.about{border-radius:32px}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#ffd23f"/><path d="M13 6h6v7l6 10a3 3 0 0 1-3 4H10a3 3 0 0 1-3-4l6-10z" fill="#ff5a5f"/><circle cx="14" cy="21" r="1.8" fill="#fff"/><circle cx="18.5" cy="23.5" r="1.3" fill="#fff"/></svg>두근두근 중2 과학</a>
+  <nav aria-label="바로 가기"><a href="#apps">수업 앱</a><a href="#about">수업 소개</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <h1>두근두근<br>중2 과학</h1>
+    <p class="lead">눌러 보고, 옮겨 보고, 직접 알아내는 과학 수업! 식물부터 별까지 5~8단원의 수업 앱을 한곳에 모았어요.</p>
+    <div class="cta"><a class="btn" href="#apps">수업 들어가기</a><a class="btn w" href="#about">수업 소개 보기</a></div>
+  </div>
+  <svg class="art" viewBox="0 0 520 420" role="img" aria-label="잎, 위, 번개, 별과 지구가 비커 둘레에 떠 있는 그림">
+    <circle cx="260" cy="220" r="150" fill="#fff" opacity=".55"/>
+    <g><path d="M222 110h76v84l66 112a30 30 0 0 1-26 46H182a30 30 0 0 1-26-46l66-112z" fill="#fff"/><path d="M196 254h128l31 53a22 22 0 0 1-19 34H184a22 22 0 0 1-19-34z" fill="#ff5a5f"/><rect x="212" y="98" width="96" height="20" rx="10" fill="#232046"/><circle cx="222" cy="300" r="13" fill="#fff" opacity=".8"/><circle cx="266" cy="318" r="9" fill="#fff" opacity=".8"/><circle cx="296" cy="286" r="11" fill="#fff" opacity=".8"/><circle cx="258" cy="232" r="10" fill="#ff9aa0"/><circle cx="276" cy="196" r="7" fill="#ff9aa0"/>
+      <circle cx="236" cy="272" r="6" fill="#232046"/><circle cx="284" cy="272" r="6" fill="#232046"/><path d="M250 282q10 10 20 0" stroke="#232046" stroke-width="5" fill="none" stroke-linecap="round"/></g>
+    <g class="float"><path d="M40 150C40 80 100 56 150 60c4 60-24 112-92 112-6 0-18-8-18-22z" fill="#1fb457"/><path d="M52 172C74 130 100 100 134 78" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/></g>
+    <g class="float b"><path d="M400 70c26-4 30 20 28 42 30-2 62 12 58 50-4 42-58 52-92 30-12-8-10-26 4-28 28-2 22-34 14-52-8-20-30-40-12-42z" fill="#ff7a2f"/><circle cx="446" cy="152" r="6" fill="#fff"/><circle cx="424" cy="166" r="5" fill="#fff"/></g>
+    <g class="float c"><path d="M74 246l62-12-20 52 38-4-78 96 16-66-38 4z" fill="#7a5cff"/><path d="M74 246l62-12-20 52 38-4-78 96 16-66-38 4z" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"/></g>
+    <g class="float d"><path d="M430 250l17 36 40 5-29 28 7 39-35-19-35 19 7-39-29-28 40-5z" fill="#fff"/><path d="M430 264l12 27 29 4-21 20 5 29-25-14-25 14 5-29-21-20 29-4z" fill="#22b8e8"/></g>
+  </svg>
+</div></div>
+
+<section id="apps"><div class="wrap">
+  <h2 class="sec">어느 단원으로 갈까?</h2>
+  <p class="sub">단원을 누르면 그 단원의 앱만 보여요. 앱은 새 창에서 열려요.</p>
+  <div class="units" id="units"></div>
+  <button class="all" id="all" aria-pressed="true">전체 보기</button>
+  <p class="sub" id="count" role="status"></p>
+  <div id="groups"></div>
+</div></section>
+
+<section id="about" class="about"><div class="wrap">
+  <h2 class="sec">이런 수업을 해요</h2>
+  <p class="sub">눈에 보이지 않는 것도 모형으로 움직여 보고, 내가 얻은 결과로 설명하는 수업이에요.</p>
+  <ol class="flow">
+    <li><span class="no">1</span><b>생각 열기</b><p>생활 속 궁금한 장면에서 출발해 먼저 예상하거나 내 경험을 떠올려요.</p></li>
+    <li><span class="no">2</span><b>직접 탐구</b><p>실험하고, 붙이고, 끌어 보며 규칙을 스스로 찾아요.</p></li>
+    <li><span class="no">3</span><b>바로 확인</b><p>문제를 풀면 그 자리에서 결과와 풀이를 볼 수 있어요.</p></li>
+    <li><span class="no">4</span><b>내 말로 정리</b><p>처음 생각과 비교하며 오늘 알게 된 것을 내 말로 남겨요.</p></li>
+  </ol>
+  <h3 class="h3">수업의 특징</h3>
+  <div class="feat">
+    <div><b>손으로 움직이는 모형</b><p>전자의 이동, 지구의 공전, 빛이 퍼지는 모습처럼 볼 수 없는 것을 눈앞에서 움직여요.</p></div>
+    <div><b>내가 만든 자료</b><p>측정한 값이 표와 그래프가 돼요. 내 결과에서 규칙을 찾아요.</p></div>
+    <div><b>틀려도 괜찮아</b><p>힌트를 보고 다시 해 볼 수 있는 활동이 있어요. 몇 번이고 도전해 봐요.</p></div>
+  </div>
+  <h3 class="h3">단원마다 이런 것을 배워요</h3>
+  <div class="plan"><table><thead><tr><th>단원</th><th>이 앱들로 알아볼 질문</th></tr></thead><tbody id="plan"></tbody></table></div>
+</div></section>
+
+<section class="faq"><div class="wrap">
+  <h2 class="sec">앱을 쓰기 전에</h2>
+  <details><summary>로그인이 필요한가요?</summary><p>‘접속 필요’ 표시가 있는 앱은 선생님이 수업을 열었을 때만 들어갈 수 있어요. 나머지는 로그인 없이 바로 쓸 수 있어요.</p></details>
+  <details><summary>내가 쓴 답은 어디에 저장되나요?</summary><p>‘접속 필요’ 앱의 답은 선생님의 기록 시트로 보내져요. 나머지 앱은 지금 쓰는 기기의 브라우저에만 저장돼요. 함께 쓰는 기기라면 다른 사람이 볼 수 있으니 개인 정보를 적지 마세요.</p></details>
+  <details><summary>화면이 예전 모습으로 나와요.</summary><p>컴퓨터는 Ctrl과 F5를 함께 누르고, 휴대폰이나 태블릿은 창을 닫았다가 다시 열어 보세요.</p></details>
+</div></section>
+</main>
+<footer><div class="wrap">중학교 2학년 과학 · 5~8단원 수업 앱 모음</div></footer>
+
+<script>
+(() => {
+"use strict";
+const G = "https://flonnehong.github.io/";
+const UNITS = [
+  { n:5, r:"Ⅴ", t:"식물과 에너지", ask:"식물이 광합성을 더 많이 하게 하려면 무엇을 바꾸어야 할까?" },
+  { n:6, r:"Ⅵ", t:"동물과 에너지", ask:"내가 먹은 음식은 어떻게 온몸의 세포에 전달될까?" },
+  { n:7, r:"Ⅶ", t:"전기와 자기", ask:"보이지 않는 전자가 움직이면 어떤 일이 일어날까?" },
+  { n:8, r:"Ⅷ", t:"별과 우주", ask:"갈 수 없는 별까지의 거리는 어떻게 알 수 있을까?" }
+];
+/* 카드 그림: 모두 320×150 */
+const PIC = {
+  photo:`<rect x="40" y="26" width="150" height="112" rx="14" fill="#fff"/><rect x="40" y="60" width="150" height="78" rx="14" fill="#bfeeff"/><path d="M115 138V74" stroke="#0b853b" stroke-width="7" stroke-linecap="round"/><g fill="#1fb457"><ellipse cx="94" cy="84" rx="22" ry="8" transform="rotate(24 94 84)"/><ellipse cx="136" cy="84" rx="22" ry="8" transform="rotate(-24 136 84)"/><ellipse cx="92" cy="108" rx="24" ry="8" transform="rotate(20 92 108)"/><ellipse cx="138" cy="108" rx="24" ry="8" transform="rotate(-20 138 108)"/></g><g fill="#fff" stroke="#22b8e8" stroke-width="3"><circle cx="112" cy="62" r="6"/><circle cx="124" cy="48" r="5"/><circle cx="106" cy="36" r="7"/></g><g><circle cx="252" cy="58" r="26" fill="#ffc400"/><g stroke="#ffc400" stroke-width="7" stroke-linecap="round"><path d="M252 14v8M252 94v8M208 58h8M288 58h8M221 27l6 6M277 83l6 6M283 27l-6 6M227 83l-6 6"/></g></g>`,
+  body:`<circle cx="160" cy="34" r="22" fill="#ffd8bd"/><path d="M118 140V92q0-30 42-30t42 30v48z" fill="#22b8e8"/><path d="M152 74c20-4 26 14 20 30-4 12-24 14-28 2" fill="#ffc400"/><path d="M150 92a12 12 0 0 1 20-4 12 12 0 0 1 10 18l-16 16-16-16a10 10 0 0 1 2-14z" fill="#ff5a5f"/><g font-family="Jua,sans-serif" font-size="26" fill="#232046"><g><circle cx="58" cy="50" r="27" fill="#fff"/><text x="58" y="60" text-anchor="middle">!</text></g><g><circle cx="264" cy="46" r="27" fill="#fff"/><text x="264" y="56" text-anchor="middle">?</text></g></g><circle cx="72" cy="112" r="20" fill="#ff7a2f"/><circle cx="252" cy="112" r="20" fill="#1fb457"/><path d="M92 112h24M204 112h28" stroke="#232046" stroke-width="4" stroke-dasharray="2 9" stroke-linecap="round"/>`,
+  digest:`<path d="M120 10v26c0 14-30 20-30 52 0 34 34 46 66 40 26-5 22-32 2-30-20 2-34-4-32-20 2-18 22-20 22-44V10z" fill="#ff8f86"/><g fill="#fff"><circle cx="116" cy="92" r="6"/><circle cx="134" cy="106" r="5"/></g><g transform="rotate(-8 240 50)"><rect x="196" y="28" width="92" height="40" rx="12" fill="#fff"/><text x="242" y="56" text-anchor="middle" font-family="Jua,sans-serif" font-size="24" fill="#b8450a">녹말</text></g><g transform="rotate(7 240 104)"><rect x="190" y="84" width="104" height="40" rx="12" fill="#ffc400"/><text x="242" y="112" text-anchor="middle" font-family="Jua,sans-serif" font-size="24" fill="#232046">소화효소</text></g><path d="M40 62l12 24 26 3-19 18 5 26-24-13-24 13 5-26-19-18 26-3z" fill="#1fb457" transform="translate(8 -20) scale(.9)"/>`,
+  induct:`<rect x="36" y="32" width="170" height="92" rx="20" fill="#e4e8ee" stroke="#a9b1bf" stroke-width="4"/><g fill="#e0366b"><circle cx="66" cy="58" r="11"/><circle cx="106" cy="58" r="11"/><circle cx="146" cy="58" r="11"/><circle cx="182" cy="58" r="11"/></g><g stroke="#fff" stroke-width="3"><path d="M60 58h12M66 52v12M100 58h12M106 52v12M140 58h12M146 52v12M176 58h12M182 52v12"/></g><g fill="#2265c9"><circle cx="56" cy="96" r="10"/><circle cx="80" cy="100" r="10"/><circle cx="104" cy="94" r="10"/><circle cx="134" cy="99" r="10"/></g><g stroke="#fff" stroke-width="3"><path d="M51 96h10M75 100h10M99 94h10M129 99h10"/></g><path d="M182 99h-26m8-8-9 8 9 8" stroke="#2265c9" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="240" y="16" width="30" height="120" rx="15" fill="#ff7aa5"/><g stroke="#fff" stroke-width="5" stroke-linecap="round"><path d="M249 42h12M249 76h12M249 110h12"/></g>`,
+  magnet:`<g fill="none" stroke="#7a5cff" stroke-width="4" stroke-dasharray="3 9" stroke-linecap="round"><ellipse cx="160" cy="48" rx="126" ry="36"/><ellipse cx="160" cy="104" rx="126" ry="36"/></g><rect x="76" y="62" width="168" height="28" rx="6" fill="#c9ced8"/><path d="M76 62h84v28H76z" fill="#d93a47"/><path d="M160 62h84v28h-84z" fill="#2265c9"/><g fill="none" stroke="#e08a2b" stroke-width="8"><path d="M104 52v48M128 52v48M152 52v48M176 52v48M200 52v48M224 52v48" stroke-linecap="round"/></g><g fill="#fff6cf"><circle cx="58" cy="76" r="17"/><circle cx="263" cy="76" r="17"/></g><text x="58" y="86" font-family="Jua,sans-serif" font-size="28" text-anchor="middle" fill="#232046">N</text><text x="263" y="86" font-family="Jua,sans-serif" font-size="28" text-anchor="middle" fill="#232046">S</text>`,
+  parallax:`<rect width="320" height="150" fill="#2b2466"/><g fill="#fff"><circle cx="30" cy="22" r="2"/><circle cx="90" cy="14" r="1.6"/><circle cx="196" cy="18" r="2"/><circle cx="290" cy="30" r="2"/><circle cx="250" cy="70" r="1.6"/><circle cx="130" cy="36" r="1.5"/><circle cx="300" cy="120" r="2"/></g><ellipse cx="74" cy="78" rx="34" ry="56" fill="none" stroke="#46d39a" stroke-width="4"/><circle cx="74" cy="78" r="15" fill="#ffc400"/><circle cx="74" cy="22" r="10" fill="#22b8e8"/><circle cx="74" cy="134" r="10" fill="#22b8e8"/><path d="M74 22L286 114M74 134L286 42" stroke="#8fd0ff" stroke-width="3"/><path d="M74 78h126" stroke="#ffd23f" stroke-width="3" stroke-dasharray="6 6"/><path d="M180 69a24 24 0 0 0 0 18" stroke="#ffd23f" stroke-width="4" fill="none"/><path d="M203 62l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z" fill="#ff8f5a"/>`,
+  light:`<rect width="320" height="150" fill="#2b2466"/><path d="M40 75L283 33v84z" fill="#ffd23f" opacity=".28"/><circle cx="40" cy="75" r="20" fill="#ffe27a"/><g fill="none" stroke="#fff" stroke-width="3"><rect x="104" y="61" width="16" height="28" fill="#ffd23f"/><path d="M176 47h28v56h-28zM190 47v56M176 75h28" fill="#ffd23f" fill-opacity=".6"/><path d="M262 33h42v84h-42zM276 33v84M290 33v84M262 61h42M262 89h42" fill="#ffd23f" fill-opacity=".25"/></g>`
+};
+const APPS = [
+  { u:5, pic:"photo", t:"광합성에 영향을 주는 요인", q:"비닐하우스 딸기의 광합성을 늘리려면?", d:"검정말 가상 실험실에서 빛의 세기, 이산화 탄소 농도, 온도를 바꾸며 기포 수를 세어요. 결과는 표와 그래프가 돼요.", tags:["가상 실험","변인 통제","그래프"], url:G+"photosynthesis-factors/" },
+  { u:6, pic:"body", t:"어느 기관계일까?", q:"내 몸이 보낸 신호, 어느 기관계가 일한 걸까?", d:"내가 겪은 일을 골라 소화계, 순환계, 호흡계, 배설계와 이어 보고 우리 반 친구들의 생각도 만나요.", tags:["단원 도입","실시간 수업"], login:true, url:"https://script.google.com/macros/s/AKfycbwFymyLt9MxH-8pCsxVVOi1LharJ0P7biwC2TKvFxjZgvjbwqJxzEnYgShrYl7K25Lf8w/exec" },
+  { u:6, pic:"digest", t:"소화 스티커 탐험", q:"주먹밥은 어떤 과정을 거쳐 세포에 공급될까?", d:"소화 기관과 소화효소 스티커를 알맞은 자리에 붙이며 소화 과정을 완성해요.", tags:["스티커 붙이기","소화효소","생활 속 소화"], url:G+"digestion-enzymes/" },
+  { u:7, pic:"induct", t:"정전기 유도", q:"마찰하지 않은 금속도 대전체에 끌려올까?", d:"대전체를 캔 가까이 가져가며 전자가 어디로 이동하는지 모형으로 관찰하고, 전하 모형을 직접 완성해요.", tags:["전자 모형","단계별 활동"], login:true, url:G+"electrostatic-induction/" },
+  { u:7, pic:"magnet", t:"전류의 자기 작용", q:"전동기를 더 빨리 회전하게 하려면?", d:"코일 주위의 자기장과 코일이 받는 힘을 알아보고, 전동기가 도는 원리를 시뮬레이션으로 찾아요.", tags:["시뮬레이션","전동기"], url:G+"magnetic-effect-of-current/" },
+  { u:8, pic:"parallax", t:"시차와 연주 시차", q:"자로 잴 수 없는 별까지의 거리, 어떻게 알까?", d:"지구를 공전시키며 별을 관측하고, 시선을 그어 별의 실제 위치를 찾고, 거리와 연주 시차의 관계를 그래프로 확인해요.", tags:["작도","그래프","실제 별 비교"], url:G+"stellar-parallax/" },
+  { u:8, pic:"light", t:"빛의 밝기와 거리", q:"거리가 2배가 되면 밝기는 어떻게 될까?", d:"빛의 세기를 재어 기록하고, 빛이 퍼지는 모형으로 거리에 따라 밝기가 달라지는 까닭을 알아내요.", tags:["직접 측정","빛 모형"], url:G+"light-brightness-distance/" }
+];
+const $ = id => document.getElementById(id);
+const el = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x !== undefined) e.textContent = x; return e; };
+let now = 0;
+UNITS.forEach(u => {
+  const list = APPS.filter(a => a.u === u.n);
+  const b = el("button", "unit u"+u.n); b.type = "button"; b.dataset.n = u.n;
+  b.append(el("span","n",u.n+"단원"), el("span","t",u.t), el("span","k",`앱 ${list.length}개`));
+  b.onclick = () => { const n = now === u.n ? 0 : u.n; history.replaceState(null, "", n ? "#unit"+n : "#apps"); show(n, true); };
+  $("units").append(b);
+  const g = el("div","group u"+u.n); g.dataset.n = u.n; const h = el("div","head"); h.append(el("h3","",`${u.n}단원 ${u.t}`), el("p","",u.ask)); const cs = el("div", list.length === 1 ? "cards one" : "cards"); g.append(h, cs);
+  list.forEach(a => {
+    const c = el("article","card u"+u.n), p = el("div","pic"); p.innerHTML = `<svg viewBox="0 0 320 150" aria-hidden="true">${PIC[a.pic]}</svg>`;
+    const bd = el("div","body"), tg = el("div","tags"), go = el("a","go","들어가기"); go.href = a.url; go.target = "_blank"; go.rel = "noopener"; go.setAttribute("aria-label", a.t+" 들어가기 (새 창)");
+    if (a.login) tg.append(el("span","in","접속 필요")); a.tags.forEach(t => tg.append(el("span","",t)));
+    bd.append(el("h4","",a.t), el("p","q",a.q), el("p","d",a.d), tg, go); c.append(p, bd); cs.append(c);
+  });
+  $("groups").append(g);
+  const tr = el("tr","u"+u.n); tr.append(el("td","",`${u.n}단원 ${u.t}`), el("td","",u.ask)); $("plan").append(tr);
+});
+function show(n, move){
+  now = n;
+  document.querySelectorAll(".group").forEach(g => g.hidden = !!n && +g.dataset.n !== n);
+  document.querySelectorAll(".unit").forEach(b => b.setAttribute("aria-pressed", +b.dataset.n === n));
+  $("all").setAttribute("aria-pressed", !n);
+  const k = APPS.filter(a => !n || a.u === n).length;
+  $("count").textContent = n ? `${n}단원 앱 ${k}개를 보고 있어요.` : `모두 ${k}개의 앱이 있어요.`;
+  if (move && n) document.querySelector(`.group[data-n="${n}"]`).scrollIntoView({ block:"start" });
+}
+$("all").onclick = () => { history.replaceState(null, "", "#apps"); show(0); };
+function route(){ const m = /^#unit([5-8])$/.exec(location.hash); show(m ? +m[1] : 0, !!m); }
+addEventListener("hashchange", () => { if (/^#unit[5-8]$/.test(location.hash)) route(); });
+route();
+})();
+</script>
+</body>
+</html>
