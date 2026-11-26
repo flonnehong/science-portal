@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#ffd23f">
 <title>두근두근 중2 과학</title>
-<meta name="description" content="중학교 2학년 과학 5~8단원 수업 앱을 한곳에 모았어요. 눌러 보고, 옮겨 보고, 직접 알아내는 과학 수업">
+<meta name="description" content="중학교 2학년 과학 1~8단원 수업 앱을 한곳에 모았어요. 눌러 보고, 옮겨 보고, 직접 알아내는 과학 수업">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23ffd23f'/%3E%3Cpath d='M13 6h6v7l6 10a3 3 0 0 1-3 4H10a3 3 0 0 1-3-4l6-10z' fill='%23ff5a5f'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +14,10 @@
 <style>
 :root{color-scheme:light;--ink:#232046;--ink2:#58547a;--paper:#fffdf5;--white:#fff;--sun:#ffd23f;--coral:#ff5a5f;--sky:#22b8e8;
   --c:#ff5a5f;--cd:#c22f3a;--cs:#ffeceb;--title:"Jua","Noto Sans KR",system-ui,sans-serif}
+.u1{--c:#ff8fb1;--cd:#b0245a;--cs:#ffeaf1}
+.u2{--c:#d9a86c;--cd:#7a4c14;--cs:#f8eedf}
+.u3{--c:#7fb2ff;--cd:#1d55b8;--cs:#e6f0ff}
+.u4{--c:#4fd6be;--cd:#0b6e5e;--cs:#ddf7f2}
 .u5{--c:#3ddc7a;--cd:#0b7a36;--cs:#e2f8e6}
 .u6{--c:#ff8f45;--cd:#b8450a;--cs:#fff0e2}
 .u7{--c:#ffc400;--cd:#7d5b00;--cs:#fff6cf}
@@ -131,7 +135,7 @@ dialog h2{font-size:clamp(24px,4.4vh,44px)}dialog img{display:block;width:min(64
 <div class="hero"><div class="wrap">
   <div>
     <h1>두근두근<br>중2 과학</h1>
-    <p class="lead">눌러 보고, 옮겨 보고, 직접 알아내는 과학 수업! 식물부터 별까지 5~8단원의 수업 앱을 한곳에 모았어요.</p>
+    <p class="lead">눌러 보고, 옮겨 보고, 직접 알아내는 과학 수업! 물질부터 별까지 1~8단원의 수업 앱을 한곳에 모았어요.</p>
     <div class="cta"><a class="btn" href="#apps">수업 들어가기</a><a class="btn w" href="#about">수업 소개 보기</a><button class="btn w qropen" type="button">QR코드</button></div>
   </div>
   <svg class="art" viewBox="0 0 520 420" role="img" aria-label="잎, 위, 번개, 별과 지구가 비커 둘레에 떠 있는 그림">
@@ -186,13 +190,17 @@ dialog h2{font-size:clamp(24px,4.4vh,44px)}dialog img{display:block;width:min(64
 </div></div></section>
 </main>
 <dialog id="qrDlg" aria-labelledby="qrTitle"><h2 id="qrTitle">두근두근 중2 과학</h2><img src="qr.svg" alt="대표 앱 QR코드"><p class="qru">flonnehong.github.io/science-portal</p><button class="btn" id="qrClose" type="button">닫기</button></dialog>
-<footer><div class="wrap">중학교 2학년 과학 · 5~8단원 수업 앱 모음</div></footer>
+<footer><div class="wrap">중학교 2학년 과학 · 1~8단원 수업 앱 모음</div></footer>
 
 <script>
 (() => {
 "use strict";
 const G = "https://flonnehong.github.io/";
 const UNITS = [
+  { n:1, r:"Ⅰ", t:"물질의 특성", ask:"섞여 있는 물질에서 원하는 물질만 어떻게 골라낼까?" },
+  { n:2, r:"Ⅱ", t:"지권의 변화", ask:"단단한 암석도 변하고, 대륙도 움직일까?" },
+  { n:3, r:"Ⅲ", t:"빛과 파동", ask:"우리는 어떻게 물체를 보고 소리를 들을까?" },
+  { n:4, r:"Ⅳ", t:"물질의 구성", ask:"모든 물질은 어떤 알갱이로 이루어져 있을까?" },
   { n:5, r:"Ⅴ", t:"식물과 에너지", ask:"식물이 광합성을 더 많이 하게 하려면 무엇을 바꾸어야 할까?" },
   { n:6, r:"Ⅵ", t:"동물과 에너지", ask:"내가 먹은 음식은 어떻게 온몸의 세포에 전달될까?" },
   { n:7, r:"Ⅶ", t:"전기와 자기", ask:"보이지 않는 전자가 움직이면 어떤 일이 일어날까?" },
@@ -200,6 +208,37 @@ const UNITS = [
 ];
 /* 카드 그림: 모두 320×150 */
 const PIC = {
+  m1:`<rect width="320" height="150" fill="#fff0f5"/><path d="M110 40h100l-10 96h-80z" fill="#dff1ff" stroke="#232046" stroke-width="4"/><path d="M114 70h92l-7 64h-78z" fill="#9cc8ff"/><g fill="#fff"><circle cx="140" cy="110" r="5"/><circle cx="160" cy="92" r="4"/><circle cx="178" cy="114" r="5"/></g><rect x="226" y="20" width="12" height="110" rx="6" fill="#fff" stroke="#232046" stroke-width="3"/><rect x="229" y="50" width="6" height="76" fill="#ff5a5f"/><text x="246" y="56" font-family="Jua,sans-serif" font-size="20" fill="#232046">100℃</text>`,
+  m2:`<rect width="320" height="150" fill="#fff0f5"/><rect x="40" y="62" width="240" height="80" fill="#9cc8ff"/><rect x="70" y="44" width="70" height="30" rx="5" fill="#c8955a" stroke="#7a5230" stroke-width="3"/><rect x="170" y="52" width="36" height="22" rx="4" fill="#c8955a" stroke="#7a5230" stroke-width="3"/><rect x="230" y="112" width="26" height="26" rx="4" fill="#8d96a8" stroke="#232046" stroke-width="3"/><text x="160" y="30" font-family="Jua,sans-serif" font-size="22" text-anchor="middle" fill="#232046">질량 ÷ 부피</text>`,
+  m3:`<rect width="320" height="150" fill="#fff0f5"/><path d="M110 30h100l-8 110h-84z" fill="#cfe8ff" stroke="#232046" stroke-width="4"/><path d="M114 60h92l-7 80h-78z" fill="#6aa8ff" opacity=".7"/><g fill="#fff" stroke="#9aa3b5"><rect x="130" y="124" width="10" height="8"/><rect x="150" y="128" width="10" height="8"/><rect x="170" y="124" width="10" height="8"/></g><path d="M240 120V30h50" stroke="#7a5cff" stroke-width="5" fill="none"/><path d="M244 116q20-10 40-80" stroke="#7a5cff" stroke-width="5" fill="none"/>`,
+  m4:`<rect width="320" height="150" fill="#fff0f5"/><path d="M40 20v110h250" stroke="#232046" stroke-width="5" fill="none"/><path d="M40 125L110 70H200L270 30" stroke="#ff5a5f" stroke-width="7" fill="none" stroke-linejoin="round"/><path d="M110 70H200" stroke="#ff5a5f" stroke-width="7"/><text x="155" y="60" font-family="Jua,sans-serif" font-size="20" text-anchor="middle" fill="#232046">녹는점</text>`,
+  m5:`<rect width="320" height="150" fill="#fff0f5"/><path d="M50 110l26-50h80l26 50z" fill="#ffd23f" stroke="#b8860b" stroke-width="4"/><circle cx="235" cy="85" r="44" fill="none" stroke="#ffd23f" stroke-width="14"/><circle cx="222" cy="78" r="6" fill="#c9ced8"/><circle cx="246" cy="96" r="5" fill="#c9ced8"/><text x="115" y="138" font-family="Jua,sans-serif" font-size="18" text-anchor="middle" fill="#232046">순금</text><text x="235" y="146" font-family="Jua,sans-serif" font-size="18" text-anchor="middle" fill="#232046">14K 금</text>`,
+  m6:`<rect width="320" height="150" fill="#fff0f5"/><path d="M110 14h100l-44 90h-12z" fill="#fff" stroke="#232046" stroke-width="4"/><path d="M118 26h84l-14 30h-56z" fill="#ffd23f"/><path d="M132 56h56l-22 46h-12z" fill="#6aa8ff"/><path d="M160 104v36" stroke="#232046" stroke-width="6"/><rect x="148" y="116" width="24" height="8" rx="3" fill="#ff5a5f"/>`,
+  m7:`<rect width="320" height="150" fill="#fff0f5"/><g stroke="#232046" stroke-width="3"><circle cx="70" cy="80" r="24" fill="#ffd23f"/><circle cx="130" cy="80" r="24" fill="#f3efe2"/><circle cx="190" cy="80" r="24" fill="#fff"/><circle cx="250" cy="80" r="24" fill="#9cc8ff"/></g><g font-family="Jua,sans-serif" font-size="15" text-anchor="middle" fill="#232046"><text x="70" y="128">기름</text><text x="130" y="128">녹말</text><text x="190" y="128">소금</text><text x="250" y="128">물</text></g><text x="160" y="34" font-family="Jua,sans-serif" font-size="20" text-anchor="middle" fill="#232046">무엇부터 분리할까?</text>`,
+  g1:`<rect width="320" height="150" fill="#bfe3ff"/><circle cx="270" cy="30" r="16" fill="#ffd23f"/><ellipse cx="120" cy="32" rx="34" ry="14" fill="#fff"/><path d="M0 150V90l70-60 60 50 50-30 60 60v40z" fill="#a8794f"/><path d="M180 150q60-30 140-20v20z" fill="#3d8fd6"/><circle cx="100" cy="96" r="16" fill="#2fa84f"/><rect x="97" y="108" width="6" height="20" fill="#6b4a2b"/>`,
+  g2:`<rect width="320" height="150" fill="#f8eedf"/><circle cx="160" cy="150" r="130" fill="#a8794f"/><circle cx="160" cy="150" r="118" fill="#e0884a"/><circle cx="160" cy="150" r="70" fill="#f2c94c"/><circle cx="160" cy="150" r="30" fill="#fff1a8"/>`,
+  g3:`<rect width="320" height="150" fill="#f8eedf"/><path d="M120 120l-20-60 30-40 20 50z" fill="#f4f4f6" stroke="#9aa0aa" stroke-width="3"/><path d="M150 120l10-90 30 30-10 70z" fill="#fff" stroke="#9aa0aa" stroke-width="3"/><path d="M180 130l30-70 24 30-24 46z" fill="#eef2f6" stroke="#9aa0aa" stroke-width="3"/><rect x="40" y="96" width="60" height="40" rx="4" fill="#fdfdf8" stroke="#b8bccb" stroke-width="3"/><path d="M50 116h40" stroke="#8b3a2e" stroke-width="7" stroke-linecap="round"/>`,
+  g4:`<rect width="320" height="150" fill="#f8eedf"/><g fill="#c9c4b8" stroke="#6f6a66" stroke-width="3"><rect x="30" y="110" width="110" height="24"/><rect x="50" y="86" width="90" height="24"/><rect x="70" y="62" width="70" height="24"/></g><path d="M200 130l70-110 14 8-70 110z" fill="#ffd23f" stroke="#232046" stroke-width="3"/><path d="M200 130l6-16 10 6z" fill="#232046"/>`,
+  g5:`<rect width="320" height="150" fill="#f8eedf"/><g fill="#4a4a52" stroke="#2b2a30" stroke-width="2"><path d="M60 150V60l20-10 20 10v90z"/><path d="M100 150V50l20-10 20 10v100z"/><path d="M140 150V64l20-10 20 10v86z"/><path d="M180 150V56l20-10 20 10v94z"/><path d="M220 150V70l20-10 20 10v80z"/></g>`,
+  g6:`<rect width="320" height="150" fill="#f8eedf"/><rect x="20" y="20" width="280" height="26" fill="#e3c88d"/><rect x="20" y="46" width="280" height="22" fill="#9c7f6b"/><rect x="20" y="68" width="280" height="28" fill="#d8b98a"/><rect x="20" y="96" width="280" height="20" fill="#eef0e6"/><rect x="20" y="116" width="280" height="24" fill="#a39a8c"/><path d="M150 82a9 9 0 0 1 18 0" stroke="#5a4630" stroke-width="3" fill="none"/>`,
+  g7:`<rect width="320" height="150" fill="#f8eedf"/><rect x="40" y="30" width="240" height="96" rx="12" fill="#e8e2d8" stroke="#6f6a66" stroke-width="3"/><g stroke="#3a3634" stroke-width="7" fill="none" stroke-linecap="round"><path d="M56 50q50-14 100 0t100 0"/><path d="M56 78q50-14 100 0t100 0"/><path d="M56 106q50-14 100 0t100 0"/></g><path d="M160 4v18M160 148v-18" stroke="#d93a47" stroke-width="5"/>`,
+  g8:`<rect width="320" height="150" fill="#f8eedf"/><g font-family="Jua,sans-serif" font-size="16" text-anchor="middle" fill="#232046"><rect x="120" y="8" width="80" height="30" rx="10" fill="#e3c88d"/><text x="160" y="29">퇴적암</text><rect x="226" y="96" width="80" height="30" rx="10" fill="#9aa0c8"/><text x="266" y="117">변성암</text><rect x="14" y="96" width="80" height="30" rx="10" fill="#c9a27a"/><text x="54" y="117">화성암</text></g><g stroke="#ff7a2f" stroke-width="5" fill="none" stroke-linecap="round"><path d="M200 30q50 10 64 58"/><path d="M226 120q-66 26-130 0"/><path d="M56 92q6-50 62-62"/></g>`,
+  g9:`<rect width="320" height="150" fill="#bfe3ff"/><rect x="0" y="40" width="320" height="24" fill="#5b4330"/><rect x="0" y="64" width="320" height="30" fill="#b07850"/><rect x="0" y="94" width="320" height="26" fill="#827b74"/><rect x="0" y="120" width="320" height="30" fill="#6f6a66"/><g fill="#2fa84f"><circle cx="60" cy="30" r="10"/><circle cx="160" cy="30" r="10"/><circle cx="260" cy="30" r="10"/></g>`,
+  g10:`<rect width="320" height="150" fill="#cfe7ff"/><path d="M100 30l40 6 22 30-8 40-24 40-14-12-6-40-20-30z" fill="#e9c46a" stroke="#5d6b3a" stroke-width="3"/><path d="M176 26l50 4 22 30-10 30-20 30-16 20-10-30-10-20-20-14z" fill="#b9d98a" stroke="#5d6b3a" stroke-width="3"/><circle cx="150" cy="70" r="7" fill="#2265c9"/><circle cx="184" cy="66" r="7" fill="#2265c9"/>`,
+  g11:`<rect width="320" height="150" fill="#cfe7ff"/><path d="M0 120h320v30H0z" fill="#a8946a"/><path d="M120 120l40-70 40 70z" fill="#7a5230"/><path d="M146 58q14-30 28 0" fill="#ff5a3c"/><g fill="#ff5a3c"><circle cx="150" cy="30" r="6"/><circle cx="168" cy="20" r="5"/></g><path d="M20 140l60-6 40 8 60-10 60 6 60-4" stroke="#d93a47" stroke-width="4" stroke-dasharray="8 6" fill="none"/>`,
+  o1:`<rect width="320" height="150" fill="#fffbe8"/><circle cx="50" cy="40" r="18" fill="#ffe066" stroke="#232046" stroke-width="3"/><circle cx="160" cy="110" r="24" fill="#e0303a"/><ellipse cx="270" cy="60" rx="26" ry="15" fill="#fff" stroke="#232046" stroke-width="3"/><circle cx="270" cy="60" r="8" fill="#2b2f8a"/><g stroke="#e0a800" stroke-width="4" fill="none"><path d="M66 50l74 46"/><path d="M182 100l62-30"/></g>`,
+  o2:`<rect width="320" height="150" fill="#eef7ff"/><rect x="155" y="10" width="10" height="130" fill="#cfd6e6" stroke="#232046" stroke-width="2"/><path d="M90 120V30h40M90 74h30" stroke="#e0366b" stroke-width="10" fill="none"/><path d="M230 120V30h-40M230 74h-30" stroke="#e0366b" stroke-width="10" fill="none" opacity=".45"/>`,
+  o3:`<rect width="320" height="150" fill="#eef7ff"/><path d="M90 20q-40 55 0 110" stroke="#232046" stroke-width="8" fill="none"/><path d="M230 20q40 55 0 110" stroke="#232046" stroke-width="8" fill="none"/><g stroke="#e0a800" stroke-width="3"><path d="M20 50h56M20 100h56M300 50h-56M300 100h-56"/></g>`,
+  o4:`<rect width="320" height="150" fill="#eef7ff"/><circle cx="140" cy="66" r="50" fill="#dff1ff" stroke="#232046" stroke-width="7"/><path d="M176 102l60 40" stroke="#232046" stroke-width="12" stroke-linecap="round"/><circle cx="140" cy="66" r="22" fill="#ffb347"/><circle cx="132" cy="62" r="4" fill="#232046"/><circle cx="148" cy="62" r="4" fill="#232046"/>`,
+  o5:`<rect width="320" height="150" fill="#111"/><g style="mix-blend-mode:screen"><circle cx="135" cy="60" r="44" fill="#f00"/><circle cx="185" cy="60" r="44" fill="#0f0"/><circle cx="160" cy="100" r="44" fill="#00f"/></g>`,
+  o6:`<rect width="320" height="150" fill="#eef7ff"/><path d="M10 75C40 25 70 25 100 75S160 125 190 75S250 25 280 75S310 110 320 90" stroke="#2265c9" stroke-width="6" fill="none"/><circle cx="100" cy="75" r="8" fill="#d93a47"/><path d="M100 50v50" stroke="#d93a47" stroke-width="2" stroke-dasharray="4 4"/>`,
+  o7:`<rect width="320" height="150" fill="#14183a"/><path d="M10 75L30 35L50 115L70 35L90 115L110 35L130 115L150 75" stroke="#7dffb0" stroke-width="4" fill="none"/><path d="M170 75C185 20 200 20 215 75S245 130 260 75S290 20 310 75" stroke="#ffd23f" stroke-width="4" fill="none"/>`,
+  a1:`<rect width="320" height="150" fill="#e8fbf7"/><rect x="90" y="16" width="40" height="120" rx="8" fill="#cfe5ff" stroke="#232046" stroke-width="3"/><rect x="190" y="16" width="40" height="120" rx="8" fill="#cfe5ff" stroke="#232046" stroke-width="3"/><rect x="93" y="19" width="34" height="56" fill="#fff"/><rect x="193" y="19" width="34" height="28" fill="#fff"/><text x="110" y="150" font-family="Jua,sans-serif" font-size="14" text-anchor="middle" fill="#2265c9">H₂</text><text x="210" y="150" font-family="Jua,sans-serif" font-size="14" text-anchor="middle" fill="#d93a47">O₂</text>`,
+  a2:`<rect width="320" height="150" fill="#e8fbf7"/><circle cx="160" cy="80" r="34" fill="#e0303a"/><circle cx="114" cy="110" r="22" fill="#fff" stroke="#232046" stroke-width="3"/><circle cx="206" cy="110" r="22" fill="#fff" stroke="#232046" stroke-width="3"/><g font-family="Jua,sans-serif" font-size="22" text-anchor="middle"><text x="160" y="88" fill="#fff">O</text><text x="114" y="118" fill="#232046">H</text><text x="206" y="118" fill="#232046">H</text></g><text x="160" y="34" font-family="Jua,sans-serif" font-size="26" text-anchor="middle" fill="#0b6e5e">H₂O</text>`,
+  a3:`<rect width="320" height="150" fill="#e8fbf7"/><circle cx="160" cy="75" r="60" fill="none" stroke="#9fd8cc" stroke-width="3"/><circle cx="160" cy="75" r="34" fill="none" stroke="#9fd8cc" stroke-width="3"/><circle cx="154" cy="70" r="9" fill="#d93a47"/><circle cx="168" cy="74" r="9" fill="#b8bccb"/><circle cx="158" cy="84" r="9" fill="#d93a47"/><circle cx="220" cy="75" r="8" fill="#2265c9"/><circle cx="126" cy="75" r="8" fill="#2265c9"/>`,
+  a4:`<rect width="320" height="150" fill="#e8fbf7"/><g fill="#fff" stroke="#0b6e5e" stroke-width="2"><rect x="30" y="20" width="30" height="26"/><rect x="260" y="20" width="30" height="26"/><rect x="30" y="50" width="30" height="26" fill="#ffd8bd"/><rect x="64" y="50" width="30" height="26"/><rect x="128" y="50" width="30" height="26"/><rect x="162" y="50" width="30" height="26"/><rect x="196" y="50" width="30" height="26"/><rect x="230" y="50" width="30" height="26"/><rect x="260" y="50" width="30" height="26" fill="#d9d1ff"/><rect x="30" y="80" width="30" height="26" fill="#ffd8bd"/><rect x="64" y="80" width="30" height="26"/><rect x="128" y="80" width="30" height="26"/><rect x="162" y="80" width="30" height="26"/><rect x="196" y="80" width="30" height="26"/><rect x="230" y="80" width="30" height="26"/><rect x="260" y="80" width="30" height="26" fill="#d9d1ff"/></g>`,
+  a5:`<rect width="320" height="150" fill="#e8fbf7"/><g><circle cx="70" cy="30" r="10" fill="#8a7cf0"/><circle cx="106" cy="30" r="14" fill="#2fa84f"/><circle cx="142" cy="30" r="10" fill="#8a7cf0"/><circle cx="178" cy="30" r="14" fill="#2fa84f"/><circle cx="214" cy="30" r="10" fill="#8a7cf0"/><circle cx="250" cy="30" r="14" fill="#2fa84f"/><circle cx="70" cy="60" r="14" fill="#2fa84f"/><circle cx="106" cy="60" r="10" fill="#8a7cf0"/><circle cx="142" cy="60" r="14" fill="#2fa84f"/><circle cx="178" cy="60" r="10" fill="#8a7cf0"/><circle cx="214" cy="60" r="14" fill="#2fa84f"/><circle cx="250" cy="60" r="10" fill="#8a7cf0"/><circle cx="70" cy="90" r="10" fill="#8a7cf0"/><circle cx="106" cy="90" r="14" fill="#2fa84f"/><circle cx="142" cy="90" r="10" fill="#8a7cf0"/><circle cx="178" cy="90" r="14" fill="#2fa84f"/><circle cx="214" cy="90" r="10" fill="#8a7cf0"/><circle cx="250" cy="90" r="14" fill="#2fa84f"/><circle cx="70" cy="120" r="14" fill="#2fa84f"/><circle cx="106" cy="120" r="10" fill="#8a7cf0"/><circle cx="142" cy="120" r="14" fill="#2fa84f"/><circle cx="178" cy="120" r="10" fill="#8a7cf0"/><circle cx="214" cy="120" r="14" fill="#2fa84f"/><circle cx="250" cy="120" r="10" fill="#8a7cf0"/></g>`,
+  a6:`<rect width="320" height="150" fill="#e8fbf7"/><circle cx="100" cy="75" r="36" fill="#d93a47"/><circle cx="220" cy="75" r="36" fill="#2265c9"/><g font-family="Jua,sans-serif" font-size="28" text-anchor="middle" fill="#fff"><text x="100" y="85">Na⁺</text><text x="220" y="85">Cl⁻</text></g>`,
   photo:`<rect x="40" y="26" width="150" height="112" rx="14" fill="#fff"/><rect x="40" y="60" width="150" height="78" rx="14" fill="#bfeeff"/><path d="M115 138V74" stroke="#0b853b" stroke-width="7" stroke-linecap="round"/><g fill="#1fb457"><ellipse cx="94" cy="84" rx="22" ry="8" transform="rotate(24 94 84)"/><ellipse cx="136" cy="84" rx="22" ry="8" transform="rotate(-24 136 84)"/><ellipse cx="92" cy="108" rx="24" ry="8" transform="rotate(20 92 108)"/><ellipse cx="138" cy="108" rx="24" ry="8" transform="rotate(-20 138 108)"/></g><g fill="#fff" stroke="#22b8e8" stroke-width="3"><circle cx="112" cy="62" r="6"/><circle cx="124" cy="48" r="5"/><circle cx="106" cy="36" r="7"/></g><g><circle cx="252" cy="58" r="26" fill="#ffc400"/><g stroke="#ffc400" stroke-width="7" stroke-linecap="round"><path d="M252 14v8M252 94v8M208 58h8M288 58h8M221 27l6 6M277 83l6 6M283 27l-6 6M227 83l-6 6"/></g></g>`,
   body:`<circle cx="160" cy="34" r="22" fill="#ffd8bd"/><path d="M118 140V92q0-30 42-30t42 30v48z" fill="#22b8e8"/><path d="M152 74c20-4 26 14 20 30-4 12-24 14-28 2" fill="#ffc400"/><path d="M150 92a12 12 0 0 1 20-4 12 12 0 0 1 10 18l-16 16-16-16a10 10 0 0 1 2-14z" fill="#ff5a5f"/><g font-family="Jua,sans-serif" font-size="26" fill="#232046"><g><circle cx="58" cy="50" r="27" fill="#fff"/><text x="58" y="60" text-anchor="middle">!</text></g><g><circle cx="264" cy="46" r="27" fill="#fff"/><text x="264" y="56" text-anchor="middle">?</text></g></g><circle cx="72" cy="112" r="20" fill="#ff7a2f"/><circle cx="252" cy="112" r="20" fill="#1fb457"/><path d="M92 112h24M204 112h28" stroke="#232046" stroke-width="4" stroke-dasharray="2 9" stroke-linecap="round"/>`,
   digest:`<path d="M120 10v26c0 14-30 20-30 52 0 34 34 46 66 40 26-5 22-32 2-30-20 2-34-4-32-20 2-18 22-20 22-44V10z" fill="#ff8f86"/><g fill="#fff"><circle cx="116" cy="92" r="6"/><circle cx="134" cy="106" r="5"/></g><g transform="rotate(-8 240 50)"><rect x="196" y="28" width="92" height="40" rx="12" fill="#fff"/><text x="242" y="56" text-anchor="middle" font-family="Jua,sans-serif" font-size="24" fill="#b8450a">녹말</text></g><g transform="rotate(7 240 104)"><rect x="190" y="84" width="104" height="40" rx="12" fill="#ffc400"/><text x="242" y="112" text-anchor="middle" font-family="Jua,sans-serif" font-size="24" fill="#232046">소화효소</text></g><path d="M40 62l12 24 26 3-19 18 5 26-24-13-24 13 5-26-19-18 26-3z" fill="#1fb457" transform="translate(8 -20) scale(.9)"/>`,
@@ -237,6 +276,37 @@ const PIC = {
   p89:`<rect width="320" height="150" fill="#0e1230"/><path d="M0 150q160-70 320 0z" fill="#9aa0aa"/><path d="M180 104V44" stroke="#fff" stroke-width="4"/><path d="M180 44h40v24h-40z" fill="#ff5a5f"/><circle cx="60" cy="40" r="16" fill="#3d7bd9"/>`
 };
 const APPS = [
+  { u:1, no:"1차시", pic:"m1", t:"물질의 고유한 성질", q:"물의 양이 적으면 더 낮은 온도에서 끓을까?", d:"물 50 g, 100 g, 200 g을 끓이며 끓는 온도를 비교해요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u1-1" },
+  { u:1, no:"2차시", pic:"m2", t:"물질이 뜨고 가라앉는 성질", q:"크기가 달라도 나무는 왜 모두 뜰까?", d:"저울과 눈금실린더로 질량과 부피를 재어 밀도를 구해요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u1-2" },
+  { u:1, no:"3차시", pic:"m3", t:"물질이 녹는 정도", q:"설탕이 더 이상 녹지 않는 까닭은?", d:"질산 칼륨 용액을 식히며 고체가 생기는 온도를 찾아요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u1-3" },
+  { u:1, no:"4차시", pic:"m4", t:"물질의 상태가 변하는 온도", q:"갈륨은 왜 손바닥에서 녹을까?", d:"양이 다른 팔미트산과 에탄올을 가열해 가열 곡선을 그려요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u1-4" },
+  { u:1, no:"5차시", pic:"m5", t:"우리 주변의 순물질과 혼합물", q:"순금과 14K 금은 무엇이 다를까?", d:"물과 소금물을 가열해 끓는점을 비교해요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u1-5" },
+  { u:1, no:"6차시", pic:"m6", t:"물질의 특성을 이용한 혼합물 분리", q:"국에 뜬 기름은 어떻게 걷어 낼까?", d:"밀도, 용해도, 끓는점 차로 네 가지 혼합물을 분리해요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u1-6" },
+  { u:1, no:"7차시", pic:"m7", t:"혼합물 분리 실험 설계와 수행", q:"감자에서 녹말을 어떻게 분리할까?", d:"카놀라유, 녹말, 소금, 물을 분리하는 순서를 설계해요.", tags:["실험 설계"], login:true, url:G+"science-class/lesson.html?l=u1-7" },
+  { u:2, no:"1차시", pic:"g1", t:"여러 요소로 이루어진 지구계", q:"암석은 지구계의 어디에 속할까?", d:"그림 속에서 지권, 수권, 기권, 생물권, 외권을 찾아요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u2-1" },
+  { u:2, no:"2차시", pic:"g2", t:"층으로 이루어진 지권", q:"지구의 내부는 어떻게 생겼을까?", d:"깊이를 바꾸며 지각, 맨틀, 외핵, 내핵을 탐험해요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u2-2" },
+  { u:2, no:"3차시", pic:"g3", t:"암석을 이루는 광물", q:"검은 광물 두 개를 어떻게 구별할까?", d:"조흔판, 굳기, 염산, 자석으로 광물을 구별해요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u2-3" },
+  { u:2, no:"4차시", pic:"g4", t:"다양하게 활용되는 암석과 광물", q:"스마트폰 속에도 광물이 있을까?", d:"생활 속 암석과 광물의 쓰임새를 찾고 자원을 아낄 방법을 생각해요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u2-4" },
+  { u:2, no:"5차시", pic:"g5", t:"마그마가 식어서 만들어진 화성암", q:"화강암과 현무암은 왜 다르게 생겼을까?", d:"마그마가 식는 곳을 바꾸며 결정 크기를 비교해요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u2-5" },
+  { u:2, no:"6차시", pic:"g6", t:"퇴적물이 굳어져 만들어진 퇴적암", q:"절벽의 줄무늬는 어떻게 생겼을까?", d:"퇴적물을 쌓고 굳혀 역암, 사암, 이암, 석회암을 만들어요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u2-6" },
+  { u:2, no:"7차시", pic:"g7", t:"다른 암석이 변해서 만들어진 변성암", q:"줄무늬 암석은 어떻게 생겼을까?", d:"열과 압력을 높여 엽리가 생기는 모습을 봐요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u2-7" },
+  { u:2, no:"8차시", pic:"g8", t:"순환하는 암석", q:"퇴적암이 화성암이 될 수 있을까?", d:"암석의 순환 길을 따라 여행해요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u2-8" },
+  { u:2, no:"9차시", pic:"g9", t:"암석이 부서져 만들어진 토양", q:"단단한 바위가 왜 부서질까?", d:"시간을 흘려 보내며 암석이 토양이 되는 과정을 봐요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u2-9" },
+  { u:2, no:"10차시", pic:"g10", t:"움직이는 대륙", q:"떨어진 대륙에서 같은 화석이 나오는 까닭은?", d:"시간을 거꾸로 돌려 판게아를 만들어요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u2-10" },
+  { u:2, no:"11차시", pic:"g11", t:"크고 작은 여러 개의 판", q:"지진은 왜 특정한 곳에서 자주 일어날까?", d:"지진·화산 위치와 판의 경계를 겹쳐 봐요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u2-11" },
+  { u:3, no:"1차시", pic:"o1", t:"물체를 보는 과정", q:"어두운 곳의 물체는 왜 안 보일까?", d:"빛의 반사와 굴절을 각도를 바꾸며 관찰해요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u3-1" },
+  { u:3, no:"2차시", pic:"o2", t:"평면거울에서 상이 생기는 원리", q:"거울 속 내 모습은 어디에 있을까?", d:"물체를 움직이며 상의 위치와 빛의 경로를 봐요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u3-2" },
+  { u:3, no:"3차시", pic:"o3", t:"생활 속 거울과 렌즈", q:"도로 반사 거울은 어떤 모양일까?", d:"다섯 가지 거울과 렌즈에 빛을 비추어 봐요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u3-3" },
+  { u:3, no:"4차시", pic:"o4", t:"거울과 렌즈에 의한 상", q:"돋보기로 본 고양이는 왜 클까?", d:"거리를 바꾸며 크고 작은 상, 바로 선 상과 거꾸로 선 상을 찾아요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u3-4" },
+  { u:3, no:"5차시", pic:"o5", t:"물체의 색과 빛의 합성", q:"흰 화면은 무슨 색 빛으로 만들까?", d:"빨강, 초록, 파랑 빛을 합성하고 색 조명 아래 물체를 봐요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u3-5" },
+  { u:3, no:"6차시", pic:"o6", t:"퍼져 나가는 파동", q:"먼 곳의 지진이 어떻게 전해질까?", d:"줄을 흔들며 매질의 진동과 파동의 요소를 알아봐요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u3-6" },
+  { u:3, no:"7차시", pic:"o7", t:"파동으로 알아보는 소리의 특성", q:"피아노와 바이올린 소리는 왜 다를까?", d:"세기, 높낮이, 악기를 바꾸며 파형을 보고 소리를 들어요.", tags:["소리"], login:true, url:G+"science-class/lesson.html?l=u3-7" },
+  { u:4, no:"1차시", pic:"a1", t:"원자로 이루어진 원소와 화합물", q:"물은 무엇으로 이루어져 있을까?", d:"물을 전기 분해하고 두 기체를 확인해요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u4-1" },
+  { u:4, no:"2차시", pic:"a2", t:"원소와 화합물을 나타내는 원소 기호", q:"원소를 기호로 어떻게 나타낼까?", d:"원자를 모아 분자를 만들고 화학식을 써요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u4-2" },
+  { u:4, no:"3차시", pic:"a3", t:"다양한 원소의 종류", q:"원소마다 성질이 다른 까닭은?", d:"양성자, 중성자, 전자를 더하며 원자 모형을 만들어요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u4-3" },
+  { u:4, no:"4차시", pic:"a4", t:"원소를 배치한 주기율표", q:"원소를 달력처럼 놓으면 무엇이 좋을까?", d:"주기율표에서 원소를 찾고 1족, 18족의 성질을 비교해요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u4-4" },
+  { u:4, no:"5차시", pic:"a5", t:"물질을 이루는 입자", q:"소금은 어떤 알갱이로 되어 있을까?", d:"원자, 분자, 이온으로 된 물질의 입자 모형을 봐요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u4-5" },
+  { u:4, no:"6차시", pic:"a6", t:"전하를 띠는 이온", q:"전원을 켜면 보라색은 어디로 갈까?", d:"전자를 주고받아 이온을 만들고 이온의 이동을 관찰해요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u4-6" },
   { u:5, no:"1차시", pic:"p51", t:"양분을 만드는 광합성", q:"버드나무는 무엇으로 자랐을까?", d:"엘이디등을 켜고 끄며 이산화 탄소 농도를 재고, 검정말 잎의 녹말을 검출해요.", tags:["가상 실험"], login:true, url:G+"science-class/lesson.html?l=u5-1" },
   { u:5, no:"2차시", pic:"photo", t:"광합성에 영향을 미치는 환경요인", q:"스마트팜은 무엇을 조절할까?", d:"빛의 세기, 이산화 탄소 농도, 온도를 하나씩 바꾸며 기포 수를 기록해요.", tags:["변인 통제","그래프"], login:true, url:G+"science-class/lesson.html?l=u5-2" },
   { u:5, no:"3차시", pic:"p53", t:"광합성과 호흡의 관계", q:"식물은 언제 호흡할까?", d:"빛의 세기를 바꾸며 식물이 내보내고 흡수하는 기체를 비교해요.", tags:[], login:true, url:G+"science-class/lesson.html?l=u5-3" },
@@ -302,8 +372,8 @@ function show(n, move){
   if (move && n) document.querySelector(`.group[data-n="${n}"]`).scrollIntoView({ block:"start" });
 }
 $("all").onclick = () => { history.replaceState(null, "", "#apps"); show(0); };
-function route(){ const m = /^#unit([5-8])$/.exec(location.hash); show(m ? +m[1] : 0, !!m); }
-addEventListener("hashchange", () => { if (/^#unit[5-8]$/.test(location.hash)) route(); });
+function route(){ const m = /^#unit([1-8])$/.exec(location.hash); show(m ? +m[1] : 0, !!m); }
+addEventListener("hashchange", () => { if (/^#unit[1-8]$/.test(location.hash)) route(); });
 route();
 const dlg = $("qrDlg");
 document.querySelectorAll(".qropen").forEach(b => b.onclick = () => dlg.showModal());
