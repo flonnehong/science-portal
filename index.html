@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#ffd23f">
-<title>두근두근 중2 과학</title>
+<title>두근두근 science</title>
 <meta name="description" content="중학교 2학년 과학 1~8단원 수업 앱을 한곳에 모았어요. 눌러 보고, 옮겨 보고, 직접 알아내는 과학 수업">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23ffd23f'/%3E%3Cpath d='M13 6h6v7l6 10a3 3 0 0 1-3 4H10a3 3 0 0 1-3-4l6-10z' fill='%23ff5a5f'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,6 +53,10 @@ header.top{position:sticky;top:0;z-index:10;background:rgba(255,253,245,.94);bac
 .hero svg.art{width:100%;height:auto;display:block}
 .float{animation:fl 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
 .float.b{animation-delay:-1.4s}.float.c{animation-delay:-2.6s}.float.d{animation-delay:-3.8s}
+.fly{display:inline-block;position:relative;color:#e0366b;font-style:italic;transform:rotate(-14deg) translate(.1em,-.12em);transform-origin:left bottom;animation:fly 3.2s ease-in-out infinite}
+.fly::before{content:"";position:absolute;left:-.62em;bottom:.18em;width:.5em;height:.34em;background:linear-gradient(currentColor,currentColor) 0 0/100% .07em no-repeat,linear-gradient(currentColor,currentColor) .14em 50%/75% .07em no-repeat,linear-gradient(currentColor,currentColor) 0 100%/90% .07em no-repeat;opacity:.55;border-radius:.05em}
+.hero h1 .fly{margin-top:.08em}.logo .fly{margin-left:.45em}
+@keyframes fly{50%{transform:rotate(-14deg) translate(.2em,-.24em)}}
 @keyframes fl{50%{transform:translateY(-12px) rotate(3deg)}}
 
 section{padding:56px 0 8px}
@@ -127,14 +131,14 @@ dialog h2{font-size:clamp(24px,4.4vh,44px)}dialog img{display:block;width:min(64
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="logo" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#ffd23f"/><path d="M13 6h6v7l6 10a3 3 0 0 1-3 4H10a3 3 0 0 1-3-4l6-10z" fill="#ff5a5f"/><circle cx="14" cy="21" r="1.8" fill="#fff"/><circle cx="18.5" cy="23.5" r="1.3" fill="#fff"/></svg>두근두근 중2 과학</a>
+  <a class="logo" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#ffd23f"/><path d="M13 6h6v7l6 10a3 3 0 0 1-3 4H10a3 3 0 0 1-3-4l6-10z" fill="#ff5a5f"/><circle cx="14" cy="21" r="1.8" fill="#fff"/><circle cx="18.5" cy="23.5" r="1.3" fill="#fff"/></svg><span>두근두근 <span class="fly">science</span></span></a>
   <nav aria-label="바로 가기"><a href="#apps">수업 앱</a><a href="#about">수업 소개</a></nav>
 </div></header>
 
 <main id="top">
 <div class="hero"><div class="wrap">
   <div>
-    <h1>두근두근<br>중2 과학</h1>
+    <h1>두근두근<br><span class="fly">science</span></h1>
     <p class="lead">눌러 보고, 옮겨 보고, 직접 알아내는 과학 수업! 물질부터 별까지 1~8단원의 수업 앱을 한곳에 모았어요.</p>
     <div class="cta"><a class="btn" href="#apps">수업 들어가기</a><a class="btn w" href="#about">수업 소개 보기</a><button class="btn w qropen" type="button">QR코드</button></div>
   </div>
@@ -189,7 +193,7 @@ dialog h2{font-size:clamp(24px,4.4vh,44px)}dialog img{display:block;width:min(64
   <div><h2 class="sec">QR코드로 들어오기</h2><p class="qrt">카메라로 찍으면 이 페이지가 열려요.</p><p class="qru">flonnehong.github.io/science-portal</p><button class="btn qropen" type="button">크게 보기</button></div>
 </div></div></section>
 </main>
-<dialog id="qrDlg" aria-labelledby="qrTitle"><h2 id="qrTitle">두근두근 중2 과학</h2><img src="qr.svg" alt="대표 앱 QR코드"><p class="qru">flonnehong.github.io/science-portal</p><button class="btn" id="qrClose" type="button">닫기</button></dialog>
+<dialog id="qrDlg" aria-labelledby="qrTitle"><h2 id="qrTitle">두근두근 <span class="fly">science</span></h2><img src="qr.svg" alt="대표 앱 QR코드"><p class="qru">flonnehong.github.io/science-portal</p><button class="btn" id="qrClose" type="button">닫기</button></dialog>
 <footer><div class="wrap">중학교 2학년 과학 · 1~8단원 수업 앱 모음</div></footer>
 
 <script>
